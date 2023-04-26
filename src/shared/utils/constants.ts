@@ -7,3 +7,8 @@ export enum BenefitTypeEnum {
   APP = 'APP',
   SERVICE = 'SERVICE',
 }
+
+export enum SpeedTypeEnum {
+  MEGA = 'Mega',
+  GIGA = 'Giga',
+}

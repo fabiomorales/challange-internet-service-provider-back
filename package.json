@@ -9,8 +9,9 @@
     "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
     "lint": "eslint . --ext .ts",
     "lint-fix": "eslint . --ext .ts --fix",
-    "migrate:run": "knex migrate:latest ./src/shared/infra/knexorm/migrations",
+    "migrate:run": "knex migrate:latest knexfile.ts",
     "migrate:make": "knex migrate:make",
+    "seed:run": "knex seed:run knexfile.ts",
     "test": "jest",
     "test:unit": "jest -c=jest.config-unit.ts"
   },

@@ -4,7 +4,7 @@ export interface IPlan {
   speed: number;
   speed_type: string;
   price: number;
-  bestPlan: boolean;
+  best_plan: boolean;
   created_at: Date;
   updated_at: Date;
   deleted_at: Date;

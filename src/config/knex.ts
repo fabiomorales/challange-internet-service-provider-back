@@ -19,4 +19,8 @@ export default {
     directory:
       env.nodeEnv === 'production' ? './dist/shared/infra/knexorm/migrations' : './src/shared/infra/knexorm/migrations',
   },
+  seeds: {
+    tableName: 'knex_seeds',
+    directory: env.nodeEnv === 'production' ? './dist/shared/infra/knexorm/seeds' : './src/shared/infra/knexorm/seeds',
+  },
 } as Knex.Config;

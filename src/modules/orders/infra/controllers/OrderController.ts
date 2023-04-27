@@ -37,21 +37,21 @@ export default class OrderController {
 
     const updateOrder = container.resolve(UpdateOrderService);
 
-    const order = await updateOrder.execute({
+    const updatedOrder = await updateOrder.execute({
       id,
       status,
     });
 
-    return response.json(order);
+    return response.json(updatedOrder);
   }
 
   public async delete(request: Request<IDeleteOrderRequest>, response: Response): Promise<Response> {
     const { id } = request.params;
 
-    const updateOrder = container.resolve(DeleteOrderService);
+    const deleteOrder = container.resolve(DeleteOrderService);
 
-    const order = await updateOrder.execute(id);
+    const deletedOrder = await deleteOrder.execute(id);
 
-    return response.json(order);
+    return response.json(deletedOrder);
   }
 }

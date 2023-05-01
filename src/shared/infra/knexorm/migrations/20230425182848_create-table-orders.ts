@@ -7,7 +7,7 @@ export async function up(knex: Knex): Promise<void> {
     table.string('customer_name').notNullable();
     table.string('customer_email').notNullable();
     table.string('customer_phone').notNullable();
-    table.string('plan_id').notNullable();
+    table.uuid('plan_id').unsigned().references('id').inTable('plans').notNullable().onDelete('CASCADE');
     table.string('status').notNullable();
 
     table.timestamp('created_at').defaultTo(knex.fn.now());

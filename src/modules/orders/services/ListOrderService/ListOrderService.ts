@@ -19,7 +19,7 @@ class ListOrderService {
         customerEmail: order?.customer_email,
         customerName: order?.customer_name,
         customerPhone: order?.customer_phone,
-        planId: order?.plan_id,
+        planName: order?.name,
         status: order?.status,
       }));
 

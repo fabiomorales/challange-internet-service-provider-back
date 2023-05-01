@@ -3,6 +3,6 @@ export interface IListOrdersResponse {
   customerName: string;
   customerEmail: string;
   customerPhone: string;
-  planId: string;
+  planName: string;
   status: string;
 }

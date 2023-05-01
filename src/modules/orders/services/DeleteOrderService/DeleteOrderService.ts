@@ -12,6 +12,12 @@ class DeleteOrderService {
 
   public async execute(id: string): Promise<number | AppError> {
     try {
+      const order = await this.orderRepository.findById(id);
+
+      if (!order) {
+        throw new AppError('No order with this id found', StatusCodes.NO_CONTENT);
+      }
+
       await this.orderRepository.delete(id);
 
       return StatusCodes.NO_CONTENT;

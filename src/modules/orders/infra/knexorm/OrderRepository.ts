@@ -1,5 +1,6 @@
 import { IOrder } from '@modules/orders/domain/models/IOrder';
 import { IOrderRepository } from '@modules/orders/domain/repositories/IOrderRepository';
+import { IPlan } from '@modules/plans/domain/models/IPlan';
 import { knexormHelper } from '@shared/infra/knexorm';
 import { Knex } from 'knex';
 
@@ -10,8 +11,10 @@ class OrderRepository implements IOrderRepository {
     this.ormRepository = knexormHelper.client;
   }
 
-  public async findAll(): Promise<Array<IOrder>> {
-    return await this.ormRepository('orders').select('*');
+  public async findAll(): Promise<Array<IOrder & IPlan>> {
+    return await this.ormRepository('orders')
+      .innerJoin('plans', 'orders.plan_id', '=', 'plans.id')
+      .select('orders.id', 'customer_email', 'customer_name', 'customer_phone', 'name', 'status');
   }
 
   public async findById(id: string): Promise<IOrder | undefined> {

@@ -1,4 +1,4 @@
-import { IListPlansResponse } from '@modules/plans/domain/models/IListPlansResponse copy';
+import { IListPlansResponse } from '@modules/plans/domain/models/IListPlansResponse';
 
 export const reducePlansByPlanId = (plans: Array<any>): IListPlansResponse => {
   // Criar um objeto vazio que servirá como o objeto de resultado

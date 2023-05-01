@@ -1,4 +1,4 @@
-import { IListPlansResponse } from '@modules/plans/domain/models/IListPlansResponse copy';
+import { IListPlansResponse } from '@modules/plans/domain/models/IListPlansResponse';
 import PlanRepository from '@modules/plans/infra/knexorm/PlanRepository';
 import AppError from '@shared/errors/AppError';
 import { reducePlansByPlanId } from '@shared/utils/reducePlansByPlanId';
